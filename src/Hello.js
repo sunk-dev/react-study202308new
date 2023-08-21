@@ -8,13 +8,18 @@ const Hello = (props) => {
   console.log(props);
 
   return (
-    <Card className='rectangle'>
-      <div>
-        {props.children}
-        Hello React
-      </div>
-    </Card>
+    [<div></div>,
+    <p></p>]
   );
+
+  // return (
+  //   <Card className='rectangle'>
+  //     <div>
+  //       {props.children}
+  //       Hello React
+  //     </div>
+  //   </Card>
+  // );
 };
 
 export default Hello;
