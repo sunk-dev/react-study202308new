@@ -16,7 +16,7 @@ const DUMMY_CART = [
     price: 12000,
   },
 ];
-const Cart = () => {
+const Cart = ({onClose}) => {
   const {
     'cart-items': cartItemStyle,
     total,
@@ -24,9 +24,9 @@ const Cart = () => {
     'button--alt': btnAlt,
     button,
   } = styles;
-  
+
   return (
-    <CartModal>
+    <CartModal onClose={onClose} >
       {/* 주문내역 */}
 
       <ul className={cartItemStyle}>
@@ -40,7 +40,7 @@ const Cart = () => {
         <span>58,000원</span>
       </div>
       <div className={actions}>
-        <button className={btnAlt}>닫기</button>
+        <button className={btnAlt}onClick={onClose} >닫기</button>
         <button className={button}>주문</button>
       </div>
     </CartModal>
