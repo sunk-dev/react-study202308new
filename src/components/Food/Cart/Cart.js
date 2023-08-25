@@ -28,6 +28,7 @@ const Cart = ({onClose}) => {
   } = styles;
 
   const { items, totalPrice } = useContext(CartContext);
+  
 
   return (
     <CartModal onClose={onClose}>
@@ -46,7 +47,8 @@ const Cart = ({onClose}) => {
       </div>
       <div className={actions}>
         <button className={btnAlt} onClick={onClose}>닫기</button>
-        <button className={button}>주문</button>
+        {/* 조건부 랜더링 장바구니에 물건이 안담겨 있으면 주문버튼 안나오게 */}
+        {items.length>0 && <button className={button}>주문</button>}
       </div>
     </CartModal>
   );
