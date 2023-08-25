@@ -4,12 +4,10 @@ import styles from './CartItem.module.scss';
 import CartContext from '../../../store/cart-context';
 
 const CartItem = ({ cart }) => {
-  
-  const{addItem}=useContext(CartContext);
-  const cartAddItemHandler=()=>{
-    addItem(cart);
-  }
-
+  const { addItem } = useContext(CartContext);
+  const cartAddItemHandler = () => {
+    addItem({ ...cart, amount: 1 });
+  };
 
   const { name, price, amount } = cart;
 
